@@ -10,3 +10,5 @@ metadata:
   name: visitorapp-sample
 spec:
   # TODO(user): Add fields here
+  size: 2
+  title: Go Installed Visitors Site
