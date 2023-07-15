@@ -1,0 +1,27 @@
+# permissions for end users to view visitorapps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: visitorapp-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: visitors-project
+    app.kubernetes.io/part-of: visitors-project
+    app.kubernetes.io/managed-by: kustomize
+  name: visitorapp-viewer-role
+rules:
+- apiGroups:
+  - default.example.com
+  resources:
+  - visitorapps
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - default.example.com
+  resources:
+  - visitorapps/status
+  verbs:
+  - get

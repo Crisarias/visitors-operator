@@ -1,0 +1,31 @@
+# permissions for end users to edit visitorapps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: visitorapp-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: visitors-project
+    app.kubernetes.io/part-of: visitors-project
+    app.kubernetes.io/managed-by: kustomize
+  name: visitorapp-editor-role
+rules:
+- apiGroups:
+  - default.example.com
+  resources:
+  - visitorapps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - default.example.com
+  resources:
+  - visitorapps/status
+  verbs:
+  - get
