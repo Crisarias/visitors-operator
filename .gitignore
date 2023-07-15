@@ -24,3 +24,5 @@ Dockerfile.cross
 *.swp
 *.swo
 *~
+
+visitors-operator.code-workspace
